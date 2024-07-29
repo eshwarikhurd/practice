@@ -4,14 +4,16 @@ using namespace std;
 
 int fact(int n){
     
-    for(int i=1;i<=(n-1);i++){
-        n=n*i;
+    int f=1;
+    for(int i=1;i<=n;i++){
+        f=f*i;
     }
- return n;
+ return f;
 }
 int main(){
     int num;
     cin>>num;
-    cout<<fact(num)<<endl;
+    int ans= fact(num);
+    cout<<ans<<endl;
     return 0;
 }
