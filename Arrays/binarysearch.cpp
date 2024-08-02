@@ -2,17 +2,25 @@
 
 using namespace std;
 bool flag=false;
-bool linearSearch(int arr[], int n, int key){
+bool binarySearch(int arr[], int n, int key){
+    int s=0;
+    int e=n;
 
-    for(int i=0;i<n;i++){
-        if(arr[i]==key){
+    while(s<=e){
+        int mid=(s+e)/2;
+        if(arr[mid]==key){
             flag=true;
-            cout<<"Found at "<<i<<"th index"<<endl;
+            cout<<"Found at index "<<mid<<endl;
             break;
+        }
+        else if(arr[mid]>key){
+            e=mid-1;
+        }
+        else{
+            s=mid+1;
         }
     }
     return false;  
-    
 }
 int main(){
     int n;
@@ -29,7 +37,7 @@ int main(){
     cout<<"To Search: ";
     cin>>num;
 
-    linearSearch(arr, n, num);
+    binarySearch(arr, n, num);
     if (flag==false){
         cout<<"Number not found!"<<endl;
     }
