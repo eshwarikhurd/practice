@@ -4,28 +4,14 @@ using namespace std;
 
 int main(){
 
-    vector<int> v;
-    v.push_back(5);
-    v.push_back(2);
-    v.push_back(3);
+    int arr[]={10,16,7,14,5,3,2,9};
 
-    
-
-    vector<int>::iterator it;
-    for(it=v.begin();it!=v.end();it++){
-        cout<<*it;
-    }
-    cout<<endl;
-    for(auto element:v){
-        cout<<element<<endl;
-    }
-    v.pop_back();
-    cout<<endl;
-    for(auto element:v){
-        cout<<element<<endl;
+    vector<pair <int,int>> v;
+    for(int i=0;i<(sizeof(arr)/sizeof(arr[0]));i++){
+        v.push_back(make_pair(arr[i],i));
     }
 
     
+
     return 0;
-
 }
