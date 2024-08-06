@@ -4,26 +4,19 @@ using namespace std;
 
 int main(){
 
-    int n;
-    int arr[n];
-
-    cout<<"Size of Array: ";
-    cin>>n;
-
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
-    }
+    int arr[]={0, -9, 1, 3, -4, 5};
 
     cout<<"Array:"<<endl;
-    for(int k=0;k<n;k++){
-        cout<<arr[k]<<" ";
+    for(int l=0;l<6;l++){
+        cout<<arr[l]<<" ";
     }
     cout<<endl;
-    int maxNo=0;
+    int maxNo=arr[0];
 
-    for(int j=0; j<n;j++){
-        maxNo= max(arr[j],maxNo);
+    for(int j=0;j<6;j++){
+        maxNo=max(maxNo,arr[j]);
+        cout<<"Max Number= "<<maxNo<<endl;
     }
-    cout<<"Max Number= "<<maxNo<<endl;
+    
     return 0;
 }
