@@ -1,20 +1,18 @@
 #include<iostream>
 using namespace std;
 
-void bub_sort(int n, int arr[]){
-    int temp=0,counter=1;
-    while(counter<n-1){
-    for(int i=0;i<n-1;i++){
-        if(arr[i+1]<arr[i]){
-                temp=arr[i];
-                arr[i]=arr[i+1];
-                arr[i+1]=temp;
-            }
-        else continue;
-    }
-    counter++;
-    }
+void in_sort(int n, int arr[]){
     
+    for(int i=1;i<n;i++){
+        int temp=arr[i];
+        int j=i-1;
+        while(arr[j]>temp && j>=0){
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=temp;
+    }
+  
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
@@ -38,6 +36,6 @@ int main(){
     }
 
     cout<<endl<<"Sorted Array:"<<endl;
-    bub_sort(n, arr);
+    in_sort(n, arr);
     return 0;  
 }
